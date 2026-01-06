@@ -27,6 +27,14 @@ body {
 	color: var(--color-primary);
 	font-size: 1rem;
 }
+
+.material-icons-two-tone {
+	color: transparent;
+	background: var(--color-primary);
+	background-clip: text;
+	-webkit-background-clip: text;
+}
+
 a {
 	color: var(--color-secondary);
 }
@@ -159,9 +167,22 @@ main section#comprehensive-apis > div > div {
 	border: 1px solid white;
 	border-radius: 0.5rem;
 	box-shadow: inset -1px 0px 0.25rem #999;
-	padding: 1rem;
 	display: flex;
 	flex-direction: column;
+}
+main section#comprehensive-apis > div > div a {
+	padding: 1rem;
+	color: inherit;
+	text-decoration: none;
+}
+main section#comprehensive-apis > div > div a:hover {
+	color: var(--color-secondary);
+}
+main section#comprehensive-apis > div > div a:hover .material-icons-two-tone {
+	color: transparent;
+	background: var(--color-secondary);
+	background-clip: text;
+	-webkit-background-clip: text;
 }
 main section#comprehensive-apis > div > div h3 {
 	display: flex;
@@ -174,11 +195,4 @@ main section#comprehensive-apis > div > div h3 {
 footer {
 	margin: 4rem 0 2rem;
 	text-align: center;
-}
-
-.material-icons-two-tone {
-	color: transparent;
-	background: var(--color-primary);
-	background-clip: text;
-	-webkit-background-clip: text;
 }
