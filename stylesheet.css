@@ -70,6 +70,36 @@ header nav ul {
 header nav ul li a {
 	padding: 0.25rem 0.5rem;
 }
+
+#container {
+	margin: 0 auto;
+}
+@media (min-width: 40rem) {
+	#container {
+		width: 100%;
+	}
+}
+@media (min-width: 48rem) {
+	#container {
+		width: 100%;
+	}
+}
+@media (min-width: 64rem) {
+	#container {
+		width: 100%;
+	}
+}
+@media (min-width: 80rem) {
+	#container {
+		max-width: 64rem;
+	}
+}
+@media (min-width: 96rem) {
+	#container {
+		max-width: 80rem;
+	}
+}
+
 main {
 	padding: 0 1rem 1rem 1rem;
 	text-align: center;
