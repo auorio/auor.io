@@ -1,6 +1,7 @@
 :root {
 	--color-primary-raw: 101, 33, 0;
 	--color-primary: rgb(var(--color-primary-raw));
+	--color-primary--08: rgba(var(--color-primary-raw), 0.08);
 	--color-primary--20: rgba(var(--color-primary-raw), 0.2);
 	--color-secondary-raw: 34, 7, 0;
 	--color-secondary: rgb(var(--color-secondary-raw));
@@ -20,7 +21,11 @@ html {
 	font-size: var(--font-size-root);
 }
 body {
-	background: linear-gradient(45deg, white, var(--color-primary--20));
+	background-image:
+		radial-gradient(var(--color-primary--08) 10%, transparent 10%),
+		radial-gradient(var(--color-primary--08) 10%, transparent 10%);
+	background-color: #fff;
+	background-size: 15px 15px;
 	font-family: "Noto Sans Mono", monospace;
 	min-height: 100vh;
 	margin: 0;
@@ -51,10 +56,8 @@ header {
 	display: flex;
 	height: 4rem;
 	background: white;
-	margin: 1rem;
-	border-radius: 1rem;
-	box-shadow: inset -1px 0px 0.25rem #999;
-	border: 1px solid #eee;
+	border-bottom: 1px solid var(--color-primary--20);
+	box-shadow: #eee 2px 2px 10px;
 	padding: 0 1.5rem;
 }
 header #logo {
@@ -115,6 +118,9 @@ main {
 main section#hero {
 	margin: 6rem auto;
 }
+main section#hero h1 {
+	text-shadow: var(--color-primary--20) 0px 0px 10px;
+}
 
 main section#use-cases {
 	display: grid;
@@ -128,14 +134,17 @@ main section#use-cases {
 	}
 }
 
-main section#use-cases > div {
-	background: linear-gradient(45deg, var(--color-primary--20), white);
-	border: 1px solid white;
-	border-radius: 0.5rem;
-	box-shadow: inset -1px 0px 0.25rem #999;
-	padding: 1rem;
+.card {
+	background-color: white;
+	border: 1px solid var(--color-primary--20);
+	border-radius: 0.3rem;
+	box-shadow: #eee 2px 2px 10px;
 	display: flex;
 	flex-direction: column;
+}
+
+main section#use-cases > div {
+	padding: 1rem;
 }
 
 main section#use-cases > div h3 {
@@ -152,9 +161,14 @@ main section#comprehensive-apis {
 
 main section#comprehensive-apis > div {
 	display: grid;
-	grid-template-columns: repeat(2, minmax(calc(50% - 0.5rem), 1fr));
+	grid-template-columns: repeat(1, minmax(calc(50% - 0.5rem), 1fr));
 	grid-auto-flow: row;
 	gap: 1rem;
+}
+@media (min-width: 40rem) {
+	main section#comprehensive-apis > div {
+		grid-template-columns: repeat(2, minmax(calc(33% - 0.5rem), 1fr));
+	}
 }
 @media (min-width: 64rem) {
 	main section#comprehensive-apis > div {
@@ -162,14 +176,6 @@ main section#comprehensive-apis > div {
 	}
 }
 
-main section#comprehensive-apis > div > div {
-	background: linear-gradient(45deg, var(--color-primary--20), white);
-	border: 1px solid white;
-	border-radius: 0.5rem;
-	box-shadow: inset -1px 0px 0.25rem #999;
-	display: flex;
-	flex-direction: column;
-}
 main section#comprehensive-apis > div > div a {
 	padding: 1rem;
 	color: inherit;
