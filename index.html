@@ -80,7 +80,7 @@
 							</span>
 							Easy AI integration
 						</h3>
-						<p>Enabling AI agents to effortlessly fetch static API information, or make stateless API calls.</p>
+						<p>Enabling AI agents to effortlessly fetch static API information, make stateless API calls, and do research on your behalf.</p>
 					</div>
 	
 					<div class="card">
@@ -93,7 +93,120 @@
 						<p>Multiple APIs. None of the hassle. No more setting up multiple accounts with subscriptions. No more and juggling multiple API keys.</p>
 					</div>
 				</section>
-	
+
+				<section id="sample-usage">
+					<h2>Usage</h2>
+
+					<div class="code-block">
+						<div class="code-block__title">
+							<div class="code-block__actions">
+								<span class="code-block__action code-block__action--red"></span>
+								<span class="code-block__action code-block__action--yellow"></span>
+								<span class="code-block__action code-block__action--green"></span>
+							</div>
+							Terminal - Sample Agent Usage
+						</div>
+						<pre class="code-block__code">
+███            █████████  ██████████ ██████   ██████ █████ ██████   █████ █████
+░░░███         ███░░░░░███░░███░░░░░█░░██████ ██████ ░░███ ░░██████ ░░███ ░░███
+  ░░░███      ███     ░░░  ░███  █ ░  ░███░█████░███  ░███  ░███░███ ░███  ░███
+    ░░░███   ░███          ░██████    ░███░░███ ░███  ░███  ░███░░███░███  ░███
+     ███░    ░███    █████ ░███░░█    ░███ ░░░  ░███  ░███  ░███ ░░██████  ░███
+   ███░      ░░███  ░░███  ░███ ░   █ ░███      ░███  ░███  ░███  ░░█████  ░███
+ ███░         ░░█████████  ██████████ █████     █████ █████ █████  ░░█████ █████
+░░░            ░░░░░░░░░  ░░░░░░░░░░ ░░░░░     ░░░░░ ░░░░░ ░░░░░    ░░░░░ ░░░░░
+
+Tips for getting started:
+1. Ask questions, edit files, or run commands.
+2. Be specific for the best results.
+3. /help for more information.
+
+<span id="sample-usage__output">
+<strong>&gt; Find high-traffic commercial areas near central Lisbon suitable for opening a retail store.</strong>
+
+╭─────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│ ✓  check_endpoint_schema (x402 MCP Server) {"url":"https://api.auor.io/google-maps/v1/search/full"} │
+│                                                                                                     │
+│ {                                                                                                   │
+│   "requiresPayment": true,                                                                          │
+│   "statusCode": 402,                                                                                │
+│   "routeDetails": {                                                                                 │
+│     "url": "https://api.auor.io/google-maps/v1/search/full",                                        │
+│     "description": "Search for places based on a query (full details)",                             │
+│     "mimeType": "application/json",                                                                 │
+│     "schema": {                                                                                     │
+│         ...                                                                                         │
+│     },                                                                                              │
+│     "paymentMethods": [                                                                             │
+│       {                                                                                             │
+│         "price": 0.04,                                                                              │
+│         "network": "eip155:8453",                                                                   │
+│         "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"                                       │
+│       }                                                                                             │
+│     ]                                                                                               │
+│   }                                                                                                 │
+│ }                                                                                                   │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────╯
+╭─────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│ ✓  fetch (x402 MCP Server) {"method":"GET","url":"https://api.auor.io/google-maps/v1/search/full…   │
+│                                                                                                     │
+│      ...                                                                                            │
+│      "addressComponents": [                                                                         │
+│        {                                                                                            │
+│          "longText": "Avenida da Liberdade",                                                        │
+│          "shortText": "Av. da Liberdade",                                                           │
+│          "types": [                                                                                 │
+│            "route"                                                                                  |
+│          ],                                                                                         │
+│          "languageCode": "pt"                                                                       │
+│        },                                                                                           │
+│        {                                                                                            │
+│          "longText": "Lisbon Area, Portugal",                                                       │
+│          "shortText": "Lisbon Area, Portugal",                                                      │
+│          "types": [                                                                                 │
+│            "locality",                                                                              │
+│            "political"                                                                              │
+│          ],                                                                                         │
+│          "languageCode": "pt"                                                                       │
+│        },                                                                                           │
+│      ...                                                                                            │
+│                                                                                                     │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────╯
+✦ Based on your request, I found the following high-traffic commercial areas in central Lisbon
+	that could be suitable for a retail store:
+
+  <strong>1. Praça do Comércio</strong>
+   * <strong>Address:</strong> 1100-148 Lissabon, Portugal
+   * <strong>Description:</strong> Waterside public plaza with a notable arch & statue,
+       lined with outdoor cafes & shopping venues.
+   * <strong>Rating:</strong> 4.7 (based on 127,780 ratings)
+
+  <strong>2. Central Lisbon</strong>
+   * <strong>Address:</strong> R. Pascoal de Melo 30, 1150-015 Lisboa, Portugal
+   * <strong>Description:</strong> This is a real estate agency, but its location is in a central area.
+   * <strong>Rating:</strong> 4.4 (based on 47 ratings)
+
+  <strong>3. Spaces Marques de Pombal</strong>
+   * <strong>Address:</strong> Pç do Marquês de Pombal 14, 1250-162 Lisboa, Portugal
+   * <strong>Description:</strong> This is a coworking space, but it is located in a central area
+       with good transport links.
+   * <strong>Rating:</strong> 4.1 (based on 233 ratings)
+
+  These locations are all centrally located and have a high volume of foot traffic, making them
+  potentially good choices for a retail store. I would recommend visiting these areas
+  to get a better feel for the environment and the types of businesses that are already there.
+</span>
+ 1 GEMINI.md file | 1 MCP server
+╭─────────────────────────────────────────────────────────────────────────────────────────────╮
+│ >   Type your message or @path/to/file                                                      │
+╰─────────────────────────────────────────────────────────────────────────────────────────────╯
+ ~/Software/auor-io/api.auor.io (main*)    no sandbox (see /docs)    Auto (Gemini 2.5) /model
+						</pre>
+					</div>
+
+					<p>See the <a href="https://auor-io.gitbook.io/docs/getting_started">Getting started</a> documentation on how to introduce <strong>auor.io</strong> into your workflow.</p>
+				</section>
+
 				<section id="comprehensive-apis">
 					<h2>Comprehensive APIs</h2>
 	
