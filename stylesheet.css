@@ -198,7 +198,7 @@ main section#use-cases > div h3 {
 	color: #999;
 	margin: 0;
 	padding: 1rem;
-	overflow: scroll;
+	overflow: auto;
 	max-height: 500px;
 }
 
